@@ -5,6 +5,7 @@ class Book:
         self._author = author
 
         # initialize a book's owner
+        self._owner = None
 
     @property
     def title(self):
@@ -29,3 +30,14 @@ class Book:
     author = property(get_author, set_author)
 
     # set an owner to the book
+    def get_owner(self):
+        return self._owner
+    
+    def set_owner(self, owner):
+        from Owner import Owner
+        if isinstance(owner, Owner):
+            self._owner = owner
+        else:
+            raise Exception("Owner must be instance of class Owner!")
+        
+    owner = property(get_owner, set_owner)

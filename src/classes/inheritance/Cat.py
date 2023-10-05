@@ -20,8 +20,8 @@ class Cat():
     def age(self, age):
         self._age = age
 
-    def meow(self):
-        print("I am a plain cat!")
+    def meow(self, adjective = "spicy"):
+        print(f"I am a {adjective} cat!")
 
     def __str__(self):
         return f"Name: {self.name}\nAge: {self.age}"
